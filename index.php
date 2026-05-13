@@ -4,7 +4,7 @@
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SPortal</title>
+        <title>SPortal Log in</title>
         <script src="https://cdn.tailwindcss.com"></script>
 
         <style>
@@ -52,7 +52,7 @@
                                                 type="password">
                                 </div>
                                 <div class="flex justify-center">
-                                        <a class="text-sm" href="">Don't have an account? <span class="text-yellow-500 underline">Sign up Here.</span></a>
+                                        <a class="text-sm" href="pages/signup.php">Don't have an account? <span class="text-yellow-500 underline">Sign up Here.</span></a>
                                 </div>
                                 <div class="">
                                         <button class="w-full py-4 bg-yellow-500 rounded-full text-lg text-white">Log In</button>
