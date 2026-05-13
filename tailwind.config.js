@@ -1,9 +1,15 @@
 module.exports = {
         content: [
-                "./**/*.{php,js,html}"
+                "./**/*.{php,js,html}",
         ],
+
         theme: {
-                extend: {},
+                extend: {
+                        fontFamily: {
+                                nunito: ['Nunito', 'sans-serif'],
+                        },
+                },
         },
+
         plugins: [],
-};
+    };
