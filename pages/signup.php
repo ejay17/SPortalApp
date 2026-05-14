@@ -312,7 +312,6 @@
 		const playerform = document.getElementById("playerform");
 		const coachform = document.getElementById("coachform");
 
-		const submitbtn = document.getElementById("submitbtn");
 
 
 		// Show Player Form
@@ -343,6 +342,22 @@
 
 			subplayerbtn.classList.remove("hidden");
 			subcoachbtn.classList.add("hidden");
+
+			// disable coach required fields
+			document.querySelectorAll("#coachform input, #coachform select").forEach(el => {
+				el.required = false;
+			});
+
+			// enable player required fields
+			document.querySelectorAll("#playerform input, #playerform select").forEach(el => {
+				if (
+					el.name !== "middlename_player" &&
+					el.name !== "suffix_player" &&
+					el.name !== "socialmedialink"
+				) {
+					el.required = true;
+				}
+			});
 		});
 
 		// Show Coach Form
@@ -373,6 +388,21 @@
 
 			subcoachbtn.classList.remove("hidden");
 			subplayerbtn.classList.add("hidden");
+
+			// disable player required fields
+			document.querySelectorAll("#playerform input, #playerform select").forEach(el => {
+				el.required = false;
+			});
+
+			// enable coach required fields
+			document.querySelectorAll("#coachform input, #coachform select").forEach(el => {
+				if (
+					el.name !== "middlename_coach" &&
+					el.name !== "suffix_coach"
+				) {
+					el.required = true;
+				}
+			});
 		});
 		// Password
 		const eyecoach = document.getElementById("password-eye-coach");
