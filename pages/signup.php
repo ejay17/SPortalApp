@@ -34,43 +34,43 @@
 				<div id="playerform" class="flex flex-col gap-y-4 overflow-y-auto">
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Given Name</label>
-						<input type="text" placeholder="Juan"
+						<input name="givenname" type="text" placeholder="Juan"
 							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 					</div>
 
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Middle Name</label>
-						<input type="text" placeholder="Santos"
+						<input name="middlename" type="text" placeholder="Santos"
 							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 					</div>
 
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Last Name</label>
-						<input type="text" placeholder="Dela Cruz"
+						<input name="lastname" type="text" placeholder="Dela Cruz"
 							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 					</div>
 
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Contact Number</label>
-						<input type="text"
+						<input name="contactnumber" type="text"
 							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 					</div>
 
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Social Media Link <span class="text-xs text-yellow-700/60">(Optional)</span></label>
-						<input type="text"
+						<input name="socialmedialink" type="text"
 							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 					</div>
 
 					<div class="w-full flex gap-x-4">
 						<div class="w-[50%] flex flex-col gap-y-1">
 							<label class="text-yellow-700 font-semibold" for="">Suffix</label>
-							<input type="text" placeholder="ex. Jr."
+							<input name="suffix" type="text" placeholder="ex. Jr."
 								class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 						</div>
 						<div class="w-[50%] flex flex-col gap-y-1">
 							<label class="text-yellow-700 font-semibold" for="">Date of Birth</label>
-							<input type="date"
+							<input name="dob" type="date"
 								class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
 						</div>
 					</div>
@@ -78,12 +78,12 @@
 					<div class="w-full flex gap-x-4">
 						<div class="w-[50%] flex flex-col gap-y-1">
 							<label class="text-yellow-700 font-semibold" for="">Student ID</label>
-							<input type="text"
+							<input name="studentid" type="text"
 								class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 						</div>
 						<div class="w-[50%] flex flex-col gap-y-1">
 							<label class="text-yellow-700 font-semibold" for="">Year Level</label>
-							<select name="" id=""
+							<select name="yearlvl" id=""
 								class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
 								<option value="" hidden selected></option>
 								<option value="">1st Year</option>
@@ -96,7 +96,7 @@
 
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Institute/Campus</label>
-						<select name="" id=""
+						<select name="inscam" id=""
 							class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
 							<option value=""></option>
 						</select>
@@ -107,37 +107,37 @@
 
 						<div class="grid grid-cols-3 gap-y-1">
 							<div class="col-span-1 flex items-center gap-x-3">
-								<input type="checkbox" name="basketball" id=""
+								<input type="checkbox" name="sports[]" name="Basketball" id=""
 									class="border border-yellow-500 accent-yellow-500">
 								<label class="text-lg text-yellow-700" for="">Basketball</label>
 							</div>
 
 							<div class="col-span-1 flex items-center gap-x-3">
-								<input type="checkbox" name="volleyball" id=""
+								<input type="checkbox" name="sports[]" value="Volleyball" id=""
 									class="border border-yellow-500 accent-yellow-500">
 								<label class="text-lg text-yellow-700" for="">Volleyball</label>
 							</div>
 
 							<div class="col-span-1 flex items-center gap-x-3">
-								<input type="checkbox" name="arnis" id=""
+								<input type="checkbox" name="sports[]" value="Arnis" id=""
 									class="border border-yellow-500 accent-yellow-500 ">
 								<label class="text-lg text-yellow-700" for="">Arnis</label>
 							</div>
 
 							<div class="col-span-1 flex items-center gap-x-3">
-								<input type="checkbox" name="athletics" id=""
+								<input type="checkbox" name="sports[]" value="Athlethics" id=""
 									class="border border-yellow-500 accent-yellow-500 ">
 								<label class="text-lg text-yellow-700" for="">Athletics</label>
 							</div>
 
 							<div class="col-span-1 flex items-center gap-x-3">
-								<input type="checkbox" name="table tennis" id=""
+								<input type="checkbox" name="sports[]" value="Table Tennis" id=""
 									class="border border-yellow-500 accent-yellow-500 ">
 								<label class="text-lg text-yellow-700" for="">Table Tennis</label>
 							</div>
 
 							<div class="col-span-1 flex items-center gap-x-3">
-								<input type="checkbox" name="taekwondo" id=""
+								<input type="checkbox" name="sports[]" value="Taekwondo" id=""
 									class="border border-yellow-500 accent-yellow-500 ">
 								<label class="text-lg text-yellow-700" for="">Taekwondo</label>
 							</div>
@@ -146,13 +146,13 @@
 
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Username</label>
-						<input type="text"
+						<input type="text" name="username"
 							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 					</div>
 
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Password</label>
-						<input type="password"
+						<input type="password" name="password"
 							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 					</div>
 
