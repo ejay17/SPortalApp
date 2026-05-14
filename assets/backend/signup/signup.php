@@ -53,7 +53,7 @@ if (isset($_POST['signup_coach'])) {
     $sex = trim($_POST['sex_coach']);
     $dob = trim($_POST['dob_coach']);
     $institute_campus = trim($_POST['inscam_coach']);
-    $sports = $_POST['sports'];
+    $sports = $_POST['sport'];
 
     $password_hashed = password_hash($password, PASSWORD_DEFAULT);
 
