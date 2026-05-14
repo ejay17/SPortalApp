@@ -155,11 +155,6 @@
 						<input type="password" name="password"
 							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 					</div>
-
-					<div class="flex flex-col gap-y-4 items-center mt-4">
-						<a class="text-sm text-yellow-700" href="../index.php">Already have an account? <span class="underline text-yellow-500">Log in here</span></a>
-						<button class="w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up</button>
-					</div>
 				</div>
 				<!-- Coach Form -->
 				<div id="coachform" class="hidden flex-col gap-y-4 overflow-y-auto">
@@ -255,10 +250,11 @@
 						<input type="password"
 							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 					</div>
-					<div class="flex flex-col gap-y-4 items-center mt-4">
-						<a class="text-sm text-yellow-700" href="../index.php">Already have an account? <span class="underline text-yellow-500">Log in here</span></a>
-						<button class="w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up</button>
-					</div>
+				</div>
+
+				<div class="flex flex-col gap-y-4 items-center mt-4">
+					<a class="text-sm text-yellow-700" href="../index.php">Already have an account? <span class="underline text-yellow-500">Log in here</span></a>
+					<button id="submitbtn" class="w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up</button>
 				</div>
 			</form>
 		</div>
@@ -270,6 +266,8 @@
 
 		const playerform = document.getElementById("playerform");
 		const coachform = document.getElementById("coachform");
+
+		const submitbtn = document.getElementById("submitbtn");
 
 		// Show Player Form
 		formplayerbtn.addEventListener("click", () => {
@@ -296,6 +294,8 @@
 			);
 
 			formcoachbtn.classList.add("text-yellow-600");
+
+			submitbtn.setAttribute("name", "signup_player");
 		});
 
 		// Show Coach Form
@@ -323,6 +323,8 @@
 			);
 
 			formplayerbtn.classList.add("text-yellow-600");
+
+			submitbtn.setAttribute("name", "signup_coach");
 		});
 	</script>
 </body>
