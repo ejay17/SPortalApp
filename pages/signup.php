@@ -276,7 +276,7 @@
 				</div>
 
 				<div class="flex flex-col gap-y-4 items-center mt-4">
-					<a class="text-sm text-yellow-700" href="../index.php">Already have an account? <span class="underline text-yellow-500">Log in here</span></a>
+					<a class="text-sm text-yellow-700" href="../index.php">Already have an account? <span class="underline text-yellow-600">Log in here</span></a>
 					<button id="submitbtn" class="w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up</button>
 				</div>
 			</form>
