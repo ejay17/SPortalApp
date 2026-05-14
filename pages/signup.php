@@ -272,13 +272,11 @@
 
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Password</label>
-						<div>
-							<div class="relative flex flex-col">
-								<input id="password-coach" type="password" name="password"
-									class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
-								<img id="password-eye-coach" src="../assets/icons/eye-state.svg" alt="" width="32"
-									class="absolute right-4 top-1/2 -translate-y-1/2">
-							</div>
+						<div class="relative flex flex-col">
+							<input id="password-coach" type="password" name="password"
+								class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+							<img id="password-eye-coach" src="../assets/icons/eye-state.svg" alt="" width="32"
+								class="absolute right-4 top-1/2 -translate-y-1/2">
 						</div>
 					</div>
 				</div>

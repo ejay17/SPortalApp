@@ -37,8 +37,12 @@
 
                                 <div class="flex flex-col gap-y-2">
                                         <label class="text-yellow-700 " for="">Password</label>
-                                        <input class="p-4 rounded-md outline-yellow-600 border border-yellow-100"
-                                                type="password">
+                                        <div class="relative flex flex-col">
+                                                <input class="p-4 rounded-md outline-yellow-600 border border-yellow-100"
+                                                        id="password" type="password">
+                                                <img id="password-eye" src="assets/icons/eye-state.svg" alt="" width="32"
+                                                        class="absolute right-4 top-1/2 -translate-y-1/2">
+                                        </div>
                                 </div>
                                 <div class="flex justify-center">
                                         <a class="text-sm text-yellow-700" href="pages/signup.php">Don't have an account? <span class="text-yellow-500 underline">Sign up Here.</span></a>
@@ -49,6 +53,21 @@
                         </form>
                 </div>
         </div>
+
+        <script>
+                const eye = document.getElementById("password-eye");
+                const inputpass = document.getElementById("password");
+
+                eye.addEventListener("click", () => {
+                        if (inputpass.type === "password") {
+                                inputpass.type = "text";
+                                eye.setAttribute("src", "assets/icons/eye-clicked.svg");
+                        } else {
+                                inputpass.type = "password";
+                                eye.setAttribute("src", "assets/icons/eye-state.svg");
+                        }
+                });
+        </script>
 </body>
 
 </html>
