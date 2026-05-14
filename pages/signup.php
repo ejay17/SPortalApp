@@ -107,7 +107,7 @@
 
 						<div class="grid grid-cols-3 gap-y-1">
 							<div class="col-span-1 flex items-center gap-x-3">
-								<input type="checkbox" name="sports[]" name="Basketball" id=""
+								<input type="checkbox" name="sports[]" value="Basketball" id=""
 									class="border border-yellow-500 accent-yellow-500">
 								<label class="text-lg text-yellow-700" for="">Basketball</label>
 							</div>
