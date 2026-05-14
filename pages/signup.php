@@ -164,7 +164,7 @@
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Password</label>
 						<div class="relative flex flex-col">
-							<input  type="password" name="password"
+							<input type="password" name="password"
 								class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 							<img id="password-eye" src="../assets/icons/eye-state.svg" alt="" width="32"
 								class="absolute right-4 top-1/2 -translate-y-1/2">
@@ -189,6 +189,16 @@
 						<label class="text-yellow-700 font-semibold" for="">Last Name</label>
 						<input type="text" placeholder="Dela Cruz"
 							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+					</div>
+
+					<div class="flex flex-col gap-y-1">
+						<label class="text-yellow-700 font-semibold" for="">Sex</label>
+						<select name="yearlvl" id=""
+							class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
+							<option value="" hidden selected></option>
+							<option value="">Male</option>
+							<option value="">Female</option>
+						</select>
 					</div>
 
 					<div class="w-full flex gap-x-4">
@@ -263,9 +273,12 @@
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Password</label>
 						<div>
-							<input id="password" type="password"
-								class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
-							<img src="" alt="">
+							<div class="relative flex flex-col">
+								<input type="password" name="password"
+									class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+								<img id="password-eye" src="../assets/icons/eye-state.svg" alt="" width="32"
+									class="absolute right-4 top-1/2 -translate-y-1/2">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -286,9 +299,6 @@
 		const coachform = document.getElementById("coachform");
 
 		const submitbtn = document.getElementById("submitbtn");
-
-		const eye = document.getElementById("password-eye");
-		const password = document.getElementById("password");
 
 		// Show Player Form
 		formplayerbtn.addEventListener("click", () => {
@@ -348,18 +358,17 @@
 			submitbtn.setAttribute("name", "signup_coach");
 		});
 
-		eye.addEventListener("mouseenter", () => {
-			img.setAttribute("src", "../assets/icons/eye-hovered.svg");
-		});
-
-		eye.addEventListener("mouseleave", () => {
-			img.setAttribute("src", "../assets/icons/eye-state.svg");
-		});
+		const eye = document.getElementById("password-eye");
+		const password = document.getElementById("password");
 
 		eye.addEventListener("click", () => {
-			img.setAttribute("src", "../assets/icons/eye-clicked.svg");
-
-
+			if (password.type === "password") {
+				password.type = "text";
+				eye.setAttribute("src", "../assets/icons/eye-clicked.svg");
+			} else {
+				password.type = "password";
+				eye.setAttribute("src", "../assets/icons/eye-state.svg");
+			}
 		});
 	</script>
 </body>
