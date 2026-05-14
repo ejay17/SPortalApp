@@ -23,7 +23,7 @@
 	<div class="h-screen w-screen flex flex-col items-center bg-orange-50/30">
 		<div class="flex flex-col h-full w-full p-6 gap-y-4">
 			<p class="text-2xl text-center font-bold text-yellow-700">Create an Account</p>
-			<form action=""
+			<form action="../assets/backend/signup/signup.php" method="POST"
 				class="relative flex flex-col gap-y-4 p-4 rounded-xl h-[90%]">
 
 				<div class="sticky top-0 flex w-full border border-yellow-200 rounded-xl bg-yellow-50 p-1">
@@ -61,8 +61,8 @@
 							<select name="sex" id=""
 								class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
 								<option value="" hidden selected></option>
-								<option value="">Male</option>
-								<option value="">Female</option>
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
 							</select>
 						</div>
 					</div>
@@ -109,7 +109,16 @@
 						<label class="text-yellow-700 font-semibold" for="">Institute/Campus</label>
 						<select name="inscam" id=""
 							class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
-							<option value=""></option>
+							<option value="" hidden></option>
+							<option value="Balagtas Technical Vocational College">Balagtas Technical Vocational College</option>
+							<option value="College Of Agriculture">College Of Agriculture</option>
+							<option value="College Of Education">College Of Education</option>
+							<option value="College Of Engineering And Technology">College Of Engineering And Technology</option>
+							<option value="College Of Management">College Of Management</option>
+							<option value="Fortunato F. Halili National Agricultural School">Fortunato F. Halili National Agricultural School</option>
+							<option value="Institute Of Arts And Sciences">Institute Of Arts And Sciences</option>
+							<option value="Insitute Of Computer Studies">Insitute Of Computer Studies</option>
+							<option value="Institute Of Veterinary Medicine">Institute Of Veterinary Medicine</option>
 						</select>
 					</div>
 
@@ -136,7 +145,7 @@
 							</div>
 
 							<div class="col-span-1 flex items-center gap-x-3">
-								<input type="checkbox" name="sports[]" value="Athlethics" id=""
+								<input type="checkbox" name="sports[]" value="Athletics" id=""
 									class="border border-yellow-500 accent-yellow-500 ">
 								<label class="text-lg text-yellow-700" for="">Athletics</label>
 							</div>
@@ -175,19 +184,19 @@
 				<div id="coachform" class="hidden flex-col gap-y-4 overflow-y-auto">
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Given Name</label>
-						<input type="text" placeholder="Juan"
+						<input type="text" placeholder="Juan" name="givenname"
 							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 					</div>
 
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Middle Name</label>
-						<input type="text" placeholder="Santos"
+						<input type="text" placeholder="Santos" name="middlename"
 							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 					</div>
 
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Last Name</label>
-						<input type="text" placeholder="Dela Cruz"
+						<input type="text" placeholder="Dela Cruz" name="lastname"
 							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 					</div>
 
@@ -196,27 +205,27 @@
 						<select name="sex" id=""
 							class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
 							<option value="" hidden selected></option>
-							<option value="">Male</option>
-							<option value="">Female</option>
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
 						</select>
 					</div>
 
 					<div class="w-full flex gap-x-4">
 						<div class="w-[50%] flex flex-col gap-y-1">
 							<label class="text-yellow-700 font-semibold" for="">Suffix</label>
-							<input type="text" placeholder="ex. Jr."
+							<input type="text" placeholder="ex. Jr." name="suffix"
 								class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 						</div>
 						<div class="w-[50%] flex flex-col gap-y-1">
 							<label class="text-yellow-700 font-semibold" for="">Date of Birth</label>
-							<input type="date"
+							<input type="date" name="dob"
 								class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
 						</div>
 					</div>
 
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Institute/Campus</label>
-						<select name="" id=""
+						<select name="inscam" id=""
 							class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
 							<option value=""></option>
 						</select>
@@ -227,37 +236,37 @@
 
 						<div class="grid grid-cols-3 gap-y-1">
 							<div class="col-span-1 flex items-center gap-x-3">
-								<input type="checkbox" name="basketball" id=""
+								<input type="checkbox" name="sports[]" value="Basketball" id=""
 									class="border border-yellow-500 accent-yellow-500">
 								<label class="text-lg text-yellow-700" for="">Basketball</label>
 							</div>
 
 							<div class="col-span-1 flex items-center gap-x-3">
-								<input type="checkbox" name="volleyball" id=""
+								<input type="checkbox" name="sports[]" value="Volleyball" id=""
 									class="border border-yellow-500 accent-yellow-500">
 								<label class="text-lg text-yellow-700" for="">Volleyball</label>
 							</div>
 
 							<div class="col-span-1 flex items-center gap-x-3">
-								<input type="checkbox" name="arnis" id=""
+								<input type="checkbox" name="sports[]" value="Arnis" id=""
 									class="border border-yellow-500 accent-yellow-500 ">
 								<label class="text-lg text-yellow-700" for="">Arnis</label>
 							</div>
 
 							<div class="col-span-1 flex items-center gap-x-3">
-								<input type="checkbox" name="athletics" id=""
+								<input type="checkbox" name="sports[]" value="Athletics" id=""
 									class="border border-yellow-500 accent-yellow-500 ">
 								<label class="text-lg text-yellow-700" for="">Athletics</label>
 							</div>
 
 							<div class="col-span-1 flex items-center gap-x-3">
-								<input type="checkbox" name="table tennis" id=""
+								<input type="checkbox" name="sports[]" value="Table Tennis" id=""
 									class="border border-yellow-500 accent-yellow-500 ">
 								<label class="text-lg text-yellow-700" for="">Table Tennis</label>
 							</div>
 
 							<div class="col-span-1 flex items-center gap-x-3">
-								<input type="checkbox" name="taekwondo" id=""
+								<input type="checkbox" name="sports[]" value="Taekwondo" id=""
 									class="border border-yellow-500 accent-yellow-500 ">
 								<label class="text-lg text-yellow-700" for="">Taekwondo</label>
 							</div>
@@ -266,7 +275,7 @@
 
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Username</label>
-						<input type="text"
+						<input type="text" name="username"
 							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 					</div>
 
