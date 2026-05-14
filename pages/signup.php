@@ -24,7 +24,7 @@
 		<div class="flex flex-col h-full w-full p-6 gap-y-4">
 			<p class="text-2xl text-center font-bold text-yellow-700">Create an Account</p>
 			<form action=""
-				class="relative flex flex-col gap-y-4 p-4 rounded-xl bg-yellow-50 h-[90%]">
+				class="relative flex flex-col gap-y-4 p-4 rounded-xl h-[90%]">
 
 				<div class="sticky top-0 flex w-full border border-yellow-200 rounded-xl bg-yellow-50 p-1">
 					<button id="playerformbtn" type="button" class="w-[50%] py-3 bg-yellow-600 rounded-lg text-yellow-50 font-bold"> Player</button>
@@ -50,10 +50,21 @@
 							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 					</div>
 
-					<div class="flex flex-col gap-y-1">
-						<label class="text-yellow-700 font-semibold" for="">Contact Number</label>
-						<input name="contactnumber" type="text"
-							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+					<div class="w-full flex gap-x-4">
+						<div class="w-[50%] flex flex-col gap-y-1">
+							<label class="text-yellow-700 font-semibold" for="">Contact Number</label>
+							<input name="contactnumber" type="text"
+								class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+						</div>
+						<div class="w-[50%] flex flex-col gap-y-1">
+							<label class="text-yellow-700 font-semibold" for="">Sex</label>
+							<select name="yearlvl" id=""
+								class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
+								<option value="" hidden selected></option>
+								<option value="">Male</option>
+								<option value="">Female</option>
+							</select>
+						</div>
 					</div>
 
 					<div class="flex flex-col gap-y-1">
@@ -152,8 +163,12 @@
 
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Password</label>
-						<input type="password" name="password"
-							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+						<div class="relative flex flex-col">
+							<input  type="password" name="password"
+								class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+							<img id="password-eye" src="../assets/icons/eye-state.svg" alt="" width="32"
+								class="absolute right-4 top-1/2 -translate-y-1/2">
+						</div>
 					</div>
 				</div>
 				<!-- Coach Form -->
@@ -248,7 +263,7 @@
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Password</label>
 						<div>
-							<input type="password"
+							<input id="password" type="password"
 								class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 							<img src="" alt="">
 						</div>
@@ -271,6 +286,9 @@
 		const coachform = document.getElementById("coachform");
 
 		const submitbtn = document.getElementById("submitbtn");
+
+		const eye = document.getElementById("password-eye");
+		const password = document.getElementById("password");
 
 		// Show Player Form
 		formplayerbtn.addEventListener("click", () => {
@@ -328,6 +346,20 @@
 			formplayerbtn.classList.add("text-yellow-600");
 
 			submitbtn.setAttribute("name", "signup_coach");
+		});
+
+		eye.addEventListener("mouseenter", () => {
+			img.setAttribute("src", "../assets/icons/eye-hovered.svg");
+		});
+
+		eye.addEventListener("mouseleave", () => {
+			img.setAttribute("src", "../assets/icons/eye-state.svg");
+		});
+
+		eye.addEventListener("click", () => {
+			img.setAttribute("src", "../assets/icons/eye-clicked.svg");
+
+
 		});
 	</script>
 </body>
