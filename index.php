@@ -21,7 +21,7 @@
 
 <body>
         <div class="h-screen w-screen flex flex-col items-center justify-center bg-orange-50/30">
-                <div class="w-[90%] h-[50%] flex flex-col items-center gap-20">
+                <div class="w-[90%] flex flex-col items-center gap-20">
                         <div class="flex flex-col items-center justify-center">
                                 <p class="text-6xl flex items-center font-nunito font-extrabold text-yellow-500"><img src="assets/images/S lang - SPortal Logo.svg" alt="" width="56">Portal</p>
                                 <p class="text-sm text-yellow-700">Way to your Sports.</p>
@@ -48,7 +48,7 @@
                                         <a class="text-sm text-yellow-700" href="pages/signup.php">Don't have an account? <span class="text-yellow-600 underline">Sign up Here.</span></a>
                                 </div>
                                 <div class="">
-                                        <button class="w-full py-4 bg-yellow-600 rounded-full text-lg text-white">Log In</button>
+                                        <button class="w-full flex items-center justify-center gap-x-2 py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Log In <img src="assets/icons/login.svg" alt="" width="20"></button>
                                 </div>
                         </form>
                 </div>
