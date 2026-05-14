@@ -295,7 +295,7 @@
 
 				<div class="flex flex-col gap-y-4 items-center mt-4">
 					<a class="text-sm text-yellow-700" href="../index.php">Already have an account? <span class="underline text-yellow-500">Log in here</span></a>
-					<button type="submit" id="submitbtn" name="signup_player" class="w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up</button>
+					<button type="submit" id="submitbtn" class="w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up</button>
 				</div>
 			</form>
 		</div>
@@ -309,6 +309,7 @@
 		const coachform = document.getElementById("coachform");
 
 		const submitbtn = document.getElementById("submitbtn");
+
 
 		// Show Player Form
 		formplayerbtn.addEventListener("click", () => {
