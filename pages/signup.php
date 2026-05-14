@@ -314,6 +314,7 @@
 
 		const submitbtn = document.getElementById("submitbtn");
 
+
 		// Show Player Form
 		formplayerbtn.addEventListener("click", () => {
 			playerform.classList.remove("hidden");
