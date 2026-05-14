@@ -2,49 +2,141 @@
 <html lang="en">
 
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SPortal Sign up</title>
-        <script src="https://cdn.tailwindcss.com"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SPortal Sign up</title>
+	<script src="https://cdn.tailwindcss.com"></script>
 
-        <style>
-                @font-face {
-                        font-family: 'Nunito';
-                        src: url('../fonts/Nunito-Regular.ttf') format('truetype');
-                }
+	<style>
+		@font-face {
+			font-family: 'Nunito';
+			src: url('../fonts/Nunito-Regular.ttf') format('truetype');
+		}
 
-                body {
-                        font-family: 'Nunito';
-                }
-        </style>
-        <script>
-                tailwind.config = {
-                        theme: {
-                                extend: {
-                                        fontFamily: {
-                                                nunito: ['Nunito'],
-                                        }
-                                }
-                        }
-                }
-        </script>
+		body {
+			font-family: 'Nunito';
+		}
+	</style>
 </head>
 
 <body>
-        <div class="h-screen w-screen flex flex-col items-center bg-orange-50/30">
-                <div class="flex flex-col h-full w-full p-6">
-                        <form action=""
-                                class="flex flex-col gap-y-3">
-                                <p class="text-2xl text-center font-bold text-yellow-600">Sign Up</p>
-                                <div class="flex w-full border border-yellow-100 rounded-2xl bg-yellow-50 p-1">
-                                        <button class="w-[50%] py-3 bg-yellow-700 rounded-xl text-white font-semibold">I am Player</button>
-                                        <button class="w-[50%] py-3 ">I am Coach</button>
-                                </div>
+	<div class="h-screen w-screen flex flex-col items-center bg-orange-50/30">
+		<div class="flex flex-col h-full w-full p-6 gap-y-4">
+			<p class="text-2xl text-center font-bold text-yellow-700">Create an Account</p>
+			<form action=""
+				class="flex flex-col gap-y-4 p-4 rounded-xl bg-yellow-50">
 
-                                
-                        </form>
-                </div>
-        </div>
+				<div class="flex w-full border border-yellow-200 rounded-xl bg-yellow-50 p-1">
+					<button type="button" class="w-[50%] py-3 bg-yellow-600 rounded-lg text-yellow-50 font-bold">I am Player</button>
+					<button type="button" class="w-[50%] py-3 text-yellow-600 font-bold">I am Coach</button>
+				</div>
+
+				<div class="flex flex-col gap-y-1">
+					<label class="text-yellow-700 font-semibold" for="">Given Name</label>
+					<input type="text" placeholder="Juan"
+						class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+				</div>
+
+				<div class="flex flex-col gap-y-1">
+					<label class="text-yellow-700 font-semibold" for="">Middle Name</label>
+					<input type="text" placeholder="Santos"
+						class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+				</div>
+
+				<div class="flex flex-col gap-y-1">
+					<label class="text-yellow-700 font-semibold" for="">Last Name</label>
+					<input type="text" placeholder="Dela Cruz"
+						class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+				</div>
+
+				<div class="w-full flex gap-x-4">
+					<div class="w-[50%] flex flex-col gap-y-1">
+						<label class="text-yellow-700 font-semibold" for="">Suffix</label>
+						<input type="text" placeholder="ex. Jr."
+							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+					</div>
+					<div class="w-[50%] flex flex-col gap-y-1">
+						<label class="text-yellow-700 font-semibold" for="">Date of Birth</label>
+						<input type="date"
+							class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
+					</div>
+				</div>
+
+				<div class="w-full flex gap-x-4">
+					<div class="w-[50%] flex flex-col gap-y-1">
+						<label class="text-yellow-700 font-semibold" for="">Student ID</label>
+						<input type="text"
+							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+					</div>
+					<div class="w-[50%] flex flex-col gap-y-1">
+						<label class="text-yellow-700 font-semibold" for="">Year Level</label>
+						<select name="" id=""
+							class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
+							<option value="" hidden selected></option>
+							<option value="">1st Year</option>
+							<option value="">2nd Year</option>
+							<option value="">3rd Year</option>
+							<option value="">4th Year</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="flex flex-col gap-y-1">
+					<label class="text-yellow-700 font-semibold" for="">Institute/Campus</label>
+					<select name="" id=""
+						class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
+						<option value=""></option>
+					</select>
+				</div>
+
+				<div class="flex flex-col gap-y-4">
+					<label class="text-yellow-700 font-semibold" for="">Your Sport/s <span class="text-sm text-yellow-700/50">(Choose your desire sport/s)</span></label>
+
+					<div class="grid grid-cols-3 gap-y-1">
+						<div class="col-span-1 flex items-center gap-x-3">
+							<input type="checkbox" name="basketball" id=""
+								class="border border-yellow-500 accent-yellow-500">
+							<label class="text-lg text-yellow-700" for="">Basketball</label>
+						</div>
+
+						<div class="col-span-1 flex items-center gap-x-3">
+							<input type="checkbox" name="volleyball" id=""
+								class="border border-yellow-500 accent-yellow-500">
+							<label class="text-lg text-yellow-700" for="">Volleyball</label>
+						</div>
+
+						<div class="col-span-1 flex items-center gap-x-3">
+							<input type="checkbox" name="arnis" id=""
+								class="border border-yellow-500 accent-yellow-500 ">
+							<label class="text-lg text-yellow-700" for="">Arnis</label>
+						</div>
+
+						<div class="col-span-1 flex items-center gap-x-3">
+							<input type="checkbox" name="athletics" id=""
+								class="border border-yellow-500 accent-yellow-500 ">
+							<label class="text-lg text-yellow-700" for="">Athletics</label>
+						</div>
+
+						<div class="col-span-1 flex items-center gap-x-3">
+							<input type="checkbox" name="table tennis" id=""
+								class="border border-yellow-500 accent-yellow-500 ">
+							<label class="text-lg text-yellow-700" for="">Table Tennis</label>
+						</div>
+
+						<div class="col-span-1 flex items-center gap-x-3">
+							<input type="checkbox" name="taekwondo" id=""
+								class="border border-yellow-500 accent-yellow-500 ">
+							<label class="text-lg text-yellow-700" for="">Taekwondo</label>
+						</div>
+					</div>
+				</div>
+				<div class="flex flex-col gap-y-4 items-center mt-4">
+					<a class="text-sm text-yellow-700" href="../index.php">Already have an account? <span class="underline text-yellow-500">Log in here</span></a>
+					<button class="w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up</button>
+				</div>
+			</form>
+		</div>
+	</div>
 </body>
 
 </html>
