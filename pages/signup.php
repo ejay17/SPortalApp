@@ -226,40 +226,34 @@
 						<label class="text-yellow-700 font-semibold" for="">Your Sport</span></label>
 
 						<div class="grid grid-cols-3 gap-y-1">
-							<div class="col-span-1 flex items-center gap-x-3">
-								<input type="checkbox" name="basketball" id=""
-									class="border border-yellow-500 accent-yellow-500">
-								<label class="text-lg text-yellow-700" for="">Basketball</label>
+							<div class="flex items-center gap-x-3">
+								<input type="radio" name="sport" value="Basketball" class="accent-yellow-500">
+								<label class="text-lg text-yellow-700">Basketball</label>
 							</div>
 
-							<div class="col-span-1 flex items-center gap-x-3">
-								<input type="checkbox" name="volleyball" id=""
-									class="border border-yellow-500 accent-yellow-500">
-								<label class="text-lg text-yellow-700" for="">Volleyball</label>
+							<div class="flex items-center gap-x-3">
+								<input type="radio" name="sport" value="Volleyball" class="accent-yellow-500">
+								<label class="text-lg text-yellow-700">Volleyball</label>
 							</div>
 
-							<div class="col-span-1 flex items-center gap-x-3">
-								<input type="checkbox" name="arnis" id=""
-									class="border border-yellow-500 accent-yellow-500 ">
-								<label class="text-lg text-yellow-700" for="">Arnis</label>
+							<div class="flex items-center gap-x-3">
+								<input type="radio" name="sport" value="Arnis" class="accent-yellow-500">
+								<label class="text-lg text-yellow-700">Arnis</label>
 							</div>
 
-							<div class="col-span-1 flex items-center gap-x-3">
-								<input type="checkbox" name="athletics" id=""
-									class="border border-yellow-500 accent-yellow-500 ">
-								<label class="text-lg text-yellow-700" for="">Athletics</label>
+							<div class="flex items-center gap-x-3">
+								<input type="radio" name="sport" value="Athletics" class="accent-yellow-500">
+								<label class="text-lg text-yellow-700">Athletics</label>
 							</div>
 
-							<div class="col-span-1 flex items-center gap-x-3">
-								<input type="checkbox" name="table tennis" id=""
-									class="border border-yellow-500 accent-yellow-500 ">
-								<label class="text-lg text-yellow-700" for="">Table Tennis</label>
+							<div class="flex items-center gap-x-3">
+								<input type="radio" name="sport" value="Table Tennis" class="accent-yellow-500">
+								<label class="text-lg text-yellow-700">Table Tennis</label>
 							</div>
 
-							<div class="col-span-1 flex items-center gap-x-3">
-								<input type="checkbox" name="taekwondo" id=""
-									class="border border-yellow-500 accent-yellow-500 ">
-								<label class="text-lg text-yellow-700" for="">Taekwondo</label>
+							<div class="flex items-center gap-x-3">
+								<input type="radio" name="sport" value="Taekwondo" class="accent-yellow-500">
+								<label class="text-lg text-yellow-700">Taekwondo</label>
 							</div>
 						</div>
 					</div>
