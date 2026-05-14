@@ -36,7 +36,7 @@ if (isset($_POST['signup_player'])) {
         }
         header('Location: ../../../index.php');
     } else {
-        header('Location: ../../../pages/signup.php');
+        echo "Error: " . mysqli_error($conn);
     }
 }
 ?>
@@ -53,7 +53,7 @@ if (isset($_POST['signup_coach'])) {
     $sex = trim($_POST['sex_coach']);
     $dob = trim($_POST['dob_coach']);
     $institute_campus = trim($_POST['inscam_coach']);
-    $sports = $_POST['sport'];
+    $sport_name = $_POST['sport'];
 
     $password_hashed = password_hash($password, PASSWORD_DEFAULT);
 
@@ -64,17 +64,16 @@ if (isset($_POST['signup_coach'])) {
     if ($result) {
         $user_id = mysqli_insert_id($conn);
 
-        foreach ($sports as $sport_name) {
-
-            $sport_query = "INSERT INTO sports (user_id, sport_name)
+        $sport_query = "INSERT INTO sports (user_id, sport_name)
             VALUES ('$user_id', '$sport_name')";
 
-            mysqli_query($conn, $sport_query);
-        }
+        mysqli_query($conn, $sport_query);
+
         header('Location: ../../../index.php');
     } else {
-        header('Location: ../../../pages/signup.php');
+        echo "Error: " . mysqli_error($conn);
     }
 }
+
 
 ?>
