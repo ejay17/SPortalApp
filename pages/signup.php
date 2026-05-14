@@ -178,8 +178,11 @@
 							<img id="password-eye-player" src="../assets/icons/eye-state.svg" alt="" width="32"
 								class="absolute right-4 top-1/2 -translate-y-1/2">
 						</div>
+						<button type="submit" id="submitplayerbtn" name="signup_player" class="w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up</button>
 					</div>
 				</div>
+			</form>
+			<form action="../assets/backend/signup/signup.php" method="POST">
 				<!-- Coach Form -->
 				<div id="coachform" class="hidden flex-col gap-y-4 overflow-y-auto">
 					<div class="flex flex-col gap-y-1">
@@ -296,7 +299,6 @@
 				<div class="flex flex-col gap-y-4 items-center mt-4">
 					<a class="text-sm text-yellow-700" href="../index.php">Already have an account? <span class="underline text-yellow-600">Log in here</span></a>
 					<button type="submit" id="submitcoachbtn" name="signup_coach" class="hidden w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up</button>
-					<button type="submit" id="submitplayerbtn" name="signup_player" class="w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up</button>
 				</div>
 			</form>
 		</div>
@@ -342,22 +344,6 @@
 
 			subplayerbtn.classList.remove("hidden");
 			subcoachbtn.classList.add("hidden");
-
-			// disable coach required fields
-			document.querySelectorAll("#coachform input, #coachform select").forEach(el => {
-				el.required = false;
-			});
-
-			// enable player required fields
-			document.querySelectorAll("#playerform input, #playerform select").forEach(el => {
-				if (
-					el.name !== "middlename_player" &&
-					el.name !== "suffix_player" &&
-					el.name !== "socialmedialink"
-				) {
-					el.required = true;
-				}
-			});
 		});
 
 		// Show Coach Form
@@ -388,21 +374,6 @@
 
 			subcoachbtn.classList.remove("hidden");
 			subplayerbtn.classList.add("hidden");
-
-			// disable player required fields
-			document.querySelectorAll("#playerform input, #playerform select").forEach(el => {
-				el.required = false;
-			});
-
-			// enable coach required fields
-			document.querySelectorAll("#coachform input, #coachform select").forEach(el => {
-				if (
-					el.name !== "middlename_coach" &&
-					el.name !== "suffix_coach"
-				) {
-					el.required = true;
-				}
-			});
 		});
 		// Password
 		const eyecoach = document.getElementById("password-eye-coach");
