@@ -247,8 +247,11 @@
 
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Password</label>
-						<input type="password"
-							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+						<div>
+							<input type="password"
+								class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+							<img src="" alt="">
+						</div>
 					</div>
 				</div>
 

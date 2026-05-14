@@ -30,7 +30,7 @@
                                 class="w-full p-9 flex flex-col gap-y-4 rounded-xl ">
 
                                 <div class="flex flex-col gap-y-2">
-                                        <label class="text-yellow-700">E-mail</label>
+                                        <label class="text-yellow-700">Username</label>
                                         <input class="p-4 rounded-md outline-yellow-600 border border-yellow-100"
                                                 type="text">
                                 </div>
