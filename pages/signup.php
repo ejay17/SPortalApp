@@ -114,7 +114,7 @@
 					</div>
 
 					<div class="flex flex-col gap-y-4">
-						<label class="text-yellow-700 font-semibold" for="">Your Sport/s <span class="text-sm text-yellow-700/50">(Choose your desire sport/s)</span></label>
+						<label class="text-yellow-700 font-semibold" for="">Your Sport/s <span class="text-sm text-yellow-700/50">(Choose your sport/s)</span></label>
 
 						<div class="grid grid-cols-3 gap-y-1">
 							<div class="col-span-1 flex items-center gap-x-3">
