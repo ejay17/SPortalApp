@@ -123,7 +123,7 @@
 					</div>
 
 					<div class="flex flex-col gap-y-4">
-						<label class="text-yellow-700 font-semibold" for="">Your Sport/s <span class="text-sm text-yellow-700/50">(Choose your desire sport/s)</span></label>
+						<label class="text-yellow-700 font-semibold" for="">Your Sport/s <span class="text-sm text-yellow-700/50">(Choose your sport/s)</span></label>
 
 						<div class="grid grid-cols-3 gap-y-1">
 							<div class="col-span-1 flex items-center gap-x-3">
@@ -294,8 +294,9 @@
 				</div>
 
 				<div class="flex flex-col gap-y-4 items-center mt-4">
-					<a class="text-sm text-yellow-700" href="../index.php">Already have an account? <span class="underline text-yellow-500">Log in here</span></a>
-					<button type="submit" id="submitbtn" name="signup_player" class="w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up</button>
+					<a class="text-sm text-yellow-700" href="../index.php">Already have an account? <span class="underline text-yellow-600">Log in here</span></a>
+					<button type="submit" id="submitcoachbtn" name="signup_coach" class="hidden w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up</button>
+					<button type="submit" id="submitplayerbtn" name="signup_player" class="w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up</button>
 				</div>
 			</form>
 		</div>
@@ -304,6 +305,9 @@
 	<script>
 		const formplayerbtn = document.getElementById("playerformbtn");
 		const formcoachbtn = document.getElementById("coachformbtn");
+
+		const subplayerbtn = document.getElementById("submitplayerbtn");
+		const subcoachbtn = document.getElementById("submitcoachbtn");
 
 		const playerform = document.getElementById("playerform");
 		const coachform = document.getElementById("coachform");
@@ -336,7 +340,8 @@
 
 			formcoachbtn.classList.add("text-yellow-600");
 
-			submitbtn.setAttribute("name", "signup_player");
+			subplayerbtn.classList.remove("hidden");
+			subcoachbtn.classList.add("hidden");
 		});
 
 		// Show Coach Form
@@ -365,7 +370,8 @@
 
 			formplayerbtn.classList.add("text-yellow-600");
 
-			submitbtn.setAttribute("name", "signup_coach");
+			subcoachbtn.classList.remove("hidden");
+			subplayerbtn.classList.add("hidden");
 		});
 		// Password
 		const eyecoach = document.getElementById("password-eye-coach");
