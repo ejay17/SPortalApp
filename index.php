@@ -30,13 +30,13 @@
                                 class="w-full p-9 flex flex-col gap-y-4 rounded-xl ">
 
                                 <div class="flex flex-col gap-y-2">
-                                        <label class="text-yellow-700">Username</label>
+                                        <label class="text-yellow-700 font-semibold">Username</label>
                                         <input class="p-4 rounded-md outline-yellow-600 border border-yellow-100"
                                                 type="text">
                                 </div>
 
                                 <div class="flex flex-col gap-y-2">
-                                        <label class="text-yellow-700 " for="">Password</label>
+                                        <label class="text-yellow-700 font-semibold" for="">Password</label>
                                         <div class="relative flex flex-col">
                                                 <input class="p-4 rounded-md outline-yellow-600 border border-yellow-100"
                                                         id="password" type="password">
@@ -45,7 +45,7 @@
                                         </div>
                                 </div>
                                 <div class="flex justify-center">
-                                        <a class="text-sm text-yellow-700" href="pages/signup.php">Don't have an account? <span class="text-yellow-500 underline">Sign up Here.</span></a>
+                                        <a class="text-sm text-yellow-700" href="pages/signup.php">Don't have an account? <span class="text-yellow-600 underline">Sign up Here.</span></a>
                                 </div>
                                 <div class="">
                                         <button class="w-full py-4 bg-yellow-600 rounded-full text-lg text-white">Log In</button>
