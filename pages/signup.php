@@ -24,119 +24,295 @@
 		<div class="flex flex-col h-full w-full p-6 gap-y-4">
 			<p class="text-2xl text-center font-bold text-yellow-700">Create an Account</p>
 			<form action=""
-				class="flex flex-col gap-y-4 p-4 rounded-xl bg-yellow-50">
+				class="relative flex flex-col gap-y-4 p-4 rounded-xl bg-yellow-50 h-[90%]">
 
-				<div class="flex w-full border border-yellow-200 rounded-xl bg-yellow-50 p-1">
-					<button type="button" class="w-[50%] py-3 bg-yellow-600 rounded-lg text-yellow-50 font-bold">I am Player</button>
-					<button type="button" class="w-[50%] py-3 text-yellow-600 font-bold">I am Coach</button>
+				<div class="sticky top-0 flex w-full border border-yellow-200 rounded-xl bg-yellow-50 p-1">
+					<button id="playerformbtn" type="button" class="w-[50%] py-3 bg-yellow-600 rounded-lg text-yellow-50 font-bold">I am Player</button>
+					<button id="coachformbtn" type="button" class="w-[50%] py-3 text-yellow-600 font-bold">I am Coach</button>
 				</div>
-
-				<div class="flex flex-col gap-y-1">
-					<label class="text-yellow-700 font-semibold" for="">Given Name</label>
-					<input type="text" placeholder="Juan"
-						class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
-				</div>
-
-				<div class="flex flex-col gap-y-1">
-					<label class="text-yellow-700 font-semibold" for="">Middle Name</label>
-					<input type="text" placeholder="Santos"
-						class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
-				</div>
-
-				<div class="flex flex-col gap-y-1">
-					<label class="text-yellow-700 font-semibold" for="">Last Name</label>
-					<input type="text" placeholder="Dela Cruz"
-						class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
-				</div>
-
-				<div class="w-full flex gap-x-4">
-					<div class="w-[50%] flex flex-col gap-y-1">
-						<label class="text-yellow-700 font-semibold" for="">Suffix</label>
-						<input type="text" placeholder="ex. Jr."
+				<!-- Player Form -->
+				<div id="playerform" class="flex flex-col gap-y-4 overflow-y-auto">
+					<div class="flex flex-col gap-y-1">
+						<label class="text-yellow-700 font-semibold" for="">Given Name</label>
+						<input type="text" placeholder="Juan"
 							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 					</div>
-					<div class="w-[50%] flex flex-col gap-y-1">
-						<label class="text-yellow-700 font-semibold" for="">Date of Birth</label>
-						<input type="date"
-							class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
-					</div>
-				</div>
 
-				<div class="w-full flex gap-x-4">
-					<div class="w-[50%] flex flex-col gap-y-1">
-						<label class="text-yellow-700 font-semibold" for="">Student ID</label>
+					<div class="flex flex-col gap-y-1">
+						<label class="text-yellow-700 font-semibold" for="">Middle Name</label>
+						<input type="text" placeholder="Santos"
+							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+					</div>
+
+					<div class="flex flex-col gap-y-1">
+						<label class="text-yellow-700 font-semibold" for="">Last Name</label>
+						<input type="text" placeholder="Dela Cruz"
+							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+					</div>
+
+					<div class="w-full flex gap-x-4">
+						<div class="w-[50%] flex flex-col gap-y-1">
+							<label class="text-yellow-700 font-semibold" for="">Suffix</label>
+							<input type="text" placeholder="ex. Jr."
+								class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+						</div>
+						<div class="w-[50%] flex flex-col gap-y-1">
+							<label class="text-yellow-700 font-semibold" for="">Date of Birth</label>
+							<input type="date"
+								class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
+						</div>
+					</div>
+
+					<div class="w-full flex gap-x-4">
+						<div class="w-[50%] flex flex-col gap-y-1">
+							<label class="text-yellow-700 font-semibold" for="">Student ID</label>
+							<input type="text"
+								class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+						</div>
+						<div class="w-[50%] flex flex-col gap-y-1">
+							<label class="text-yellow-700 font-semibold" for="">Year Level</label>
+							<select name="" id=""
+								class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
+								<option value="" hidden selected></option>
+								<option value="">1st Year</option>
+								<option value="">2nd Year</option>
+								<option value="">3rd Year</option>
+								<option value="">4th Year</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="flex flex-col gap-y-1">
+						<label class="text-yellow-700 font-semibold" for="">Institute/Campus</label>
+						<select name="" id=""
+							class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
+							<option value=""></option>
+						</select>
+					</div>
+
+					<div class="flex flex-col gap-y-4">
+						<label class="text-yellow-700 font-semibold" for="">Your Sport/s <span class="text-sm text-yellow-700/50">(Choose your desire sport/s)</span></label>
+
+						<div class="grid grid-cols-3 gap-y-1">
+							<div class="col-span-1 flex items-center gap-x-3">
+								<input type="checkbox" name="basketball" id=""
+									class="border border-yellow-500 accent-yellow-500">
+								<label class="text-lg text-yellow-700" for="">Basketball</label>
+							</div>
+
+							<div class="col-span-1 flex items-center gap-x-3">
+								<input type="checkbox" name="volleyball" id=""
+									class="border border-yellow-500 accent-yellow-500">
+								<label class="text-lg text-yellow-700" for="">Volleyball</label>
+							</div>
+
+							<div class="col-span-1 flex items-center gap-x-3">
+								<input type="checkbox" name="arnis" id=""
+									class="border border-yellow-500 accent-yellow-500 ">
+								<label class="text-lg text-yellow-700" for="">Arnis</label>
+							</div>
+
+							<div class="col-span-1 flex items-center gap-x-3">
+								<input type="checkbox" name="athletics" id=""
+									class="border border-yellow-500 accent-yellow-500 ">
+								<label class="text-lg text-yellow-700" for="">Athletics</label>
+							</div>
+
+							<div class="col-span-1 flex items-center gap-x-3">
+								<input type="checkbox" name="table tennis" id=""
+									class="border border-yellow-500 accent-yellow-500 ">
+								<label class="text-lg text-yellow-700" for="">Table Tennis</label>
+							</div>
+
+							<div class="col-span-1 flex items-center gap-x-3">
+								<input type="checkbox" name="taekwondo" id=""
+									class="border border-yellow-500 accent-yellow-500 ">
+								<label class="text-lg text-yellow-700" for="">Taekwondo</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="flex flex-col gap-y-1">
+						<label class="text-yellow-700 font-semibold" for="">Username</label>
 						<input type="text"
 							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 					</div>
-					<div class="w-[50%] flex flex-col gap-y-1">
-						<label class="text-yellow-700 font-semibold" for="">Year Level</label>
+
+					<div class="flex flex-col gap-y-1">
+						<label class="text-yellow-700 font-semibold" for="">Password</label>
+						<input type="password"
+							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+					</div>
+
+					<div class="flex flex-col gap-y-4 items-center mt-4">
+						<a class="text-sm text-yellow-700" href="../index.php">Already have an account? <span class="underline text-yellow-500">Log in here</span></a>
+						<button class="w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up</button>
+					</div>
+				</div>
+				<!-- Coach Form -->
+				<div id="coachform" class="hidden flex-col gap-y-4 overflow-y-auto">
+					<div class="flex flex-col gap-y-1">
+						<label class="text-yellow-700 font-semibold" for="">Given Name</label>
+						<input type="text" placeholder="Juan"
+							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+					</div>
+
+					<div class="flex flex-col gap-y-1">
+						<label class="text-yellow-700 font-semibold" for="">Middle Name</label>
+						<input type="text" placeholder="Santos"
+							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+					</div>
+
+					<div class="flex flex-col gap-y-1">
+						<label class="text-yellow-700 font-semibold" for="">Last Name</label>
+						<input type="text" placeholder="Dela Cruz"
+							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+					</div>
+
+					<div class="w-full flex gap-x-4">
+						<div class="w-[50%] flex flex-col gap-y-1">
+							<label class="text-yellow-700 font-semibold" for="">Suffix</label>
+							<input type="text" placeholder="ex. Jr."
+								class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+						</div>
+						<div class="w-[50%] flex flex-col gap-y-1">
+							<label class="text-yellow-700 font-semibold" for="">Date of Birth</label>
+							<input type="date"
+								class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
+						</div>
+					</div>
+
+					<div class="flex flex-col gap-y-1">
+						<label class="text-yellow-700 font-semibold" for="">Institute/Campus</label>
 						<select name="" id=""
 							class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
-							<option value="" hidden selected></option>
-							<option value="">1st Year</option>
-							<option value="">2nd Year</option>
-							<option value="">3rd Year</option>
-							<option value="">4th Year</option>
+							<option value=""></option>
 						</select>
 					</div>
-				</div>
 
-				<div class="flex flex-col gap-y-1">
-					<label class="text-yellow-700 font-semibold" for="">Institute/Campus</label>
-					<select name="" id=""
-						class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
-						<option value=""></option>
-					</select>
-				</div>
+					<div class="flex flex-col gap-y-4">
+						<label class="text-yellow-700 font-semibold" for="">Your Sport</span></label>
 
-				<div class="flex flex-col gap-y-4">
-					<label class="text-yellow-700 font-semibold" for="">Your Sport/s <span class="text-sm text-yellow-700/50">(Choose your desire sport/s)</span></label>
+						<div class="grid grid-cols-3 gap-y-1">
+							<div class="col-span-1 flex items-center gap-x-3">
+								<input type="checkbox" name="basketball" id=""
+									class="border border-yellow-500 accent-yellow-500">
+								<label class="text-lg text-yellow-700" for="">Basketball</label>
+							</div>
 
-					<div class="grid grid-cols-3 gap-y-1">
-						<div class="col-span-1 flex items-center gap-x-3">
-							<input type="checkbox" name="basketball" id=""
-								class="border border-yellow-500 accent-yellow-500">
-							<label class="text-lg text-yellow-700" for="">Basketball</label>
-						</div>
+							<div class="col-span-1 flex items-center gap-x-3">
+								<input type="checkbox" name="volleyball" id=""
+									class="border border-yellow-500 accent-yellow-500">
+								<label class="text-lg text-yellow-700" for="">Volleyball</label>
+							</div>
 
-						<div class="col-span-1 flex items-center gap-x-3">
-							<input type="checkbox" name="volleyball" id=""
-								class="border border-yellow-500 accent-yellow-500">
-							<label class="text-lg text-yellow-700" for="">Volleyball</label>
-						</div>
+							<div class="col-span-1 flex items-center gap-x-3">
+								<input type="checkbox" name="arnis" id=""
+									class="border border-yellow-500 accent-yellow-500 ">
+								<label class="text-lg text-yellow-700" for="">Arnis</label>
+							</div>
 
-						<div class="col-span-1 flex items-center gap-x-3">
-							<input type="checkbox" name="arnis" id=""
-								class="border border-yellow-500 accent-yellow-500 ">
-							<label class="text-lg text-yellow-700" for="">Arnis</label>
-						</div>
+							<div class="col-span-1 flex items-center gap-x-3">
+								<input type="checkbox" name="athletics" id=""
+									class="border border-yellow-500 accent-yellow-500 ">
+								<label class="text-lg text-yellow-700" for="">Athletics</label>
+							</div>
 
-						<div class="col-span-1 flex items-center gap-x-3">
-							<input type="checkbox" name="athletics" id=""
-								class="border border-yellow-500 accent-yellow-500 ">
-							<label class="text-lg text-yellow-700" for="">Athletics</label>
-						</div>
+							<div class="col-span-1 flex items-center gap-x-3">
+								<input type="checkbox" name="table tennis" id=""
+									class="border border-yellow-500 accent-yellow-500 ">
+								<label class="text-lg text-yellow-700" for="">Table Tennis</label>
+							</div>
 
-						<div class="col-span-1 flex items-center gap-x-3">
-							<input type="checkbox" name="table tennis" id=""
-								class="border border-yellow-500 accent-yellow-500 ">
-							<label class="text-lg text-yellow-700" for="">Table Tennis</label>
-						</div>
-
-						<div class="col-span-1 flex items-center gap-x-3">
-							<input type="checkbox" name="taekwondo" id=""
-								class="border border-yellow-500 accent-yellow-500 ">
-							<label class="text-lg text-yellow-700" for="">Taekwondo</label>
+							<div class="col-span-1 flex items-center gap-x-3">
+								<input type="checkbox" name="taekwondo" id=""
+									class="border border-yellow-500 accent-yellow-500 ">
+								<label class="text-lg text-yellow-700" for="">Taekwondo</label>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="flex flex-col gap-y-4 items-center mt-4">
-					<a class="text-sm text-yellow-700" href="../index.php">Already have an account? <span class="underline text-yellow-500">Log in here</span></a>
-					<button class="w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up</button>
+
+					<div class="flex flex-col gap-y-1">
+						<label class="text-yellow-700 font-semibold" for="">Username</label>
+						<input type="text"
+							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+					</div>
+
+					<div class="flex flex-col gap-y-1">
+						<label class="text-yellow-700 font-semibold" for="">Password</label>
+						<input type="password"
+							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+					</div>
+					<div class="flex flex-col gap-y-4 items-center mt-4">
+						<a class="text-sm text-yellow-700" href="../index.php">Already have an account? <span class="underline text-yellow-500">Log in here</span></a>
+						<button class="w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up</button>
+					</div>
 				</div>
 			</form>
 		</div>
 	</div>
+
+	<script>
+		const formplayerbtn = document.getElementById("playerformbtn");
+		const formcoachbtn = document.getElementById("coachformbtn");
+
+		const playerform = document.getElementById("playerform");
+		const coachform = document.getElementById("coachform");
+
+		// Show Player Form
+		formplayerbtn.addEventListener("click", () => {
+			playerform.classList.remove("hidden");
+			playerform.classList.add("flex");
+
+			coachform.classList.remove("flex");
+			coachform.classList.add("hidden");
+
+			// Active button style
+			formplayerbtn.classList.add(
+				"bg-yellow-600",
+				"text-yellow-50",
+				"rounded-lg"
+			);
+
+			formplayerbtn.classList.remove("text-yellow-600");
+
+			// Inactive button style
+			formcoachbtn.classList.remove(
+				"bg-yellow-600",
+				"text-yellow-50",
+				"rounded-lg"
+			);
+
+			formcoachbtn.classList.add("text-yellow-600");
+		});
+
+		// Show Coach Form
+		formcoachbtn.addEventListener("click", () => {
+			coachform.classList.remove("hidden");
+			coachform.classList.add("flex");
+
+			playerform.classList.remove("flex");
+			playerform.classList.add("hidden");
+
+			// Active button style
+			formcoachbtn.classList.add(
+				"bg-yellow-600",
+				"text-yellow-50",
+				"rounded-lg"
+			);
+
+			formcoachbtn.classList.remove("text-yellow-600");
+
+			// Inactive button style
+			formplayerbtn.classList.remove(
+				"bg-yellow-600",
+				"text-yellow-50",
+				"rounded-lg"
+			);
+
+			formplayerbtn.classList.add("text-yellow-600");
+		});
+	</script>
 </body>
 
 </html>
