@@ -27,8 +27,8 @@
 				class="relative flex flex-col gap-y-4 p-4 rounded-xl bg-yellow-50 h-[90%]">
 
 				<div class="sticky top-0 flex w-full border border-yellow-200 rounded-xl bg-yellow-50 p-1">
-					<button id="playerformbtn" type="button" class="w-[50%] py-3 bg-yellow-600 rounded-lg text-yellow-50 font-bold">I am Player</button>
-					<button id="coachformbtn" type="button" class="w-[50%] py-3 text-yellow-600 font-bold">I am Coach</button>
+					<button id="playerformbtn" type="button" class="w-[50%] py-3 bg-yellow-600 rounded-lg text-yellow-50 font-bold"> Player</button>
+					<button id="coachformbtn" type="button" class="w-[50%] py-3 text-yellow-600 font-bold">Coach</button>
 				</div>
 				<!-- Player Form -->
 				<div id="playerform" class="flex flex-col gap-y-4 overflow-y-auto">
@@ -47,6 +47,18 @@
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Last Name</label>
 						<input type="text" placeholder="Dela Cruz"
+							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+					</div>
+
+					<div class="flex flex-col gap-y-1">
+						<label class="text-yellow-700 font-semibold" for="">Contact Number</label>
+						<input type="text"
+							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
+					</div>
+
+					<div class="flex flex-col gap-y-1">
+						<label class="text-yellow-700 font-semibold" for="">Social Media Link <span class="text-xs text-yellow-700/60">(Optional)</span></label>
+						<input type="text"
 							class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
 					</div>
 
