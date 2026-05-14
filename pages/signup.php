@@ -58,7 +58,7 @@
 						</div>
 						<div class="w-[50%] flex flex-col gap-y-1">
 							<label class="text-yellow-700 font-semibold" for="">Sex</label>
-							<select name="yearlvl" id=""
+							<select name="sex" id=""
 								class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
 								<option value="" hidden selected></option>
 								<option value="">Male</option>
@@ -164,9 +164,9 @@
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Password</label>
 						<div class="relative flex flex-col">
-							<input type="password" name="password"
+							<input id="password-player" type="password" name="password"
 								class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
-							<img id="password-eye" src="../assets/icons/eye-state.svg" alt="" width="32"
+							<img id="password-eye-player" src="../assets/icons/eye-state.svg" alt="" width="32"
 								class="absolute right-4 top-1/2 -translate-y-1/2">
 						</div>
 					</div>
@@ -193,7 +193,7 @@
 
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Sex</label>
-						<select name="yearlvl" id=""
+						<select name="sex" id=""
 							class="w-full p-4 rounded-md outline-yellow-600 border border-yellow-200 bg-white">
 							<option value="" hidden selected></option>
 							<option value="">Male</option>
@@ -274,9 +274,9 @@
 						<label class="text-yellow-700 font-semibold" for="">Password</label>
 						<div>
 							<div class="relative flex flex-col">
-								<input type="password" name="password"
+								<input id="password-coach" type="password" name="password"
 									class="p-4 rounded-md outline-yellow-600 border border-yellow-200">
-								<img id="password-eye" src="../assets/icons/eye-state.svg" alt="" width="32"
+								<img id="password-eye-coach" src="../assets/icons/eye-state.svg" alt="" width="32"
 									class="absolute right-4 top-1/2 -translate-y-1/2">
 							</div>
 						</div>
@@ -357,17 +357,29 @@
 
 			submitbtn.setAttribute("name", "signup_coach");
 		});
+		// Password
+		const eyecoach = document.getElementById("password-eye-coach");
+		const eyeplayer = document.getElementById("password-eye-player");
+		const passwordcoach = document.getElementById("password-coach");
+		const passwordplayer = document.getElementById("password-player");
 
-		const eye = document.getElementById("password-eye");
-		const password = document.getElementById("password");
-
-		eye.addEventListener("click", () => {
-			if (password.type === "password") {
-				password.type = "text";
-				eye.setAttribute("src", "../assets/icons/eye-clicked.svg");
+		eyecoach.addEventListener("click", () => {
+			if (passwordcoach.type === "password") {
+				passwordcoach.type = "text";
+				eyecoach.setAttribute("src", "../assets/icons/eye-clicked.svg");
 			} else {
-				password.type = "password";
-				eye.setAttribute("src", "../assets/icons/eye-state.svg");
+				passwordcoach.type = "password";
+				eyecoach.setAttribute("src", "../assets/icons/eye-state.svg");
+			}
+		});
+
+		eyeplayer.addEventListener("click", () => {
+			if (passwordplayer.type === "password") {
+				passwordplayer.type = "text";
+				eyeplayer.setAttribute("src", "../assets/icons/eye-clicked.svg");
+			} else {
+				passwordplayer.type = "password";
+				eyeplayer.setAttribute("src", "../assets/icons/eye-state.svg");
 			}
 		});
 	</script>
