@@ -23,7 +23,7 @@
 	<div class="h-screen w-screen flex flex-col items-center bg-orange-50/30">
 		<div class="flex flex-col h-full w-full p-6 gap-y-4">
 			<p class="text-2xl text-center font-bold text-yellow-700">Create an Account</p>
-			<form action="../assets/backend/signup/signup.php" method="POST"
+			<form action="../assets/backend/functions/signup.php" method="POST"
 				class="relative flex flex-col gap-y-4 p-4 rounded-xl h-[90%]">
 
 				<div class="sticky top-0 flex w-full border border-yellow-200 rounded-xl bg-yellow-50 p-1">
