@@ -184,7 +184,7 @@
 				</div>
 				<div class="flex flex-col gap-y-4 items-center mt-4">
 					<a class="text-sm text-yellow-700" href="../index.php">Already have an account? <span class="underline text-yellow-600">Log in here</span></a>
-					<button type="submit" id="submitplayerbtn" name="signup_player" class="w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up</button>
+					<button type="submit" id="submitplayerbtn" name="signup_player" class="flex items-center justify-center gap-x-2 w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up <img src="../assets/icons/login.svg" alt="" width="20"></button>
 				</div>
 			</form>
 
@@ -305,7 +305,7 @@
 
 				<div class="flex flex-col gap-y-4 items-center mt-4">
 					<a class="text-sm text-yellow-700" href="../index.php">Already have an account? <span class="underline text-yellow-600">Log in here</span></a>
-					<button type="submit" id="submitcoachbtn" name="signup_coach" class="hidden w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up</button>
+					<button type="submit" id="submitcoachbtn" name="signup_coach" class="flex items-center justify-center gap-x-2 w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up <img src="../assets/icons/login.svg" alt="" width="20"></button>
 				</div>
 			</form>
 		</div>
