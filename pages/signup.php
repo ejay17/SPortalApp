@@ -23,15 +23,16 @@
 	<div class="h-screen w-screen flex flex-col items-center bg-orange-50/30">
 		<div class="flex flex-col h-full w-full p-6 gap-y-4">
 			<p class="text-2xl text-center font-bold text-yellow-700">Create an Account</p>
-			<form action="../assets/backend/functions/signup.php" method="POST"
-				class="relative flex flex-col gap-y-4 p-4 rounded-xl h-[90%]">
 
-				<div class="sticky top-0 flex w-full border border-yellow-200 rounded-xl bg-yellow-50 p-1">
-					<button id="playerformbtn" type="button" class="w-[50%] py-3 bg-yellow-600 rounded-lg text-yellow-50 font-bold"> Player</button>
-					<button id="coachformbtn" type="button" class="w-[50%] py-3 text-yellow-600 font-bold">Coach</button>
-				</div>
+			<div class="sticky top-0 flex w-full border border-yellow-200 rounded-xl bg-yellow-50 p-1">
+				<button id="playerformbtn" type="button" class="flex gap-2 items-center justify-center w-[50%] py-3 bg-yellow-600 rounded-lg text-yellow-50 font-bold"><img src="../assets/icons/player.svg" alt="" width="24"> Player</button>
+				<button id="coachformbtn" type="button" class="flex gap-2 items-center justify-center w-[50%] py-3 text-yellow-600 font-bold"><img src="../assets/icons/coach.svg" alt="" width="24"> Coach</button>
+			</div>
+
+			<form action="../assets/backend/functions/signup.php" method="POST" id="playerform"
+				class="flex relative flex-col rounded-xl h-[85%]">
 				<!-- Player Form -->
-				<div id="playerform" class="flex flex-col gap-y-4 overflow-y-auto">
+				<div class="flex flex-col gap-y-4 overflow-y-auto">
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Given Name</label>
 						<input name="givenname_player" type="text" placeholder="Juan" required
@@ -178,13 +179,19 @@
 							<img id="password-eye-player" src="../assets/icons/eye-state.svg" alt="" width="32"
 								class="absolute right-4 top-1/2 -translate-y-1/2">
 						</div>
-						<button type="submit" id="submitplayerbtn" name="signup_player" class="w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up</button>
+
 					</div>
 				</div>
+				<div class="flex flex-col gap-y-4 items-center mt-4">
+					<a class="text-sm text-yellow-700" href="../index.php">Already have an account? <span class="underline text-yellow-600">Log in here</span></a>
+					<button type="submit" id="submitplayerbtn" name="signup_player" class="w-full py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Sign up</button>
+				</div>
 			</form>
-			<form action="../assets/backend/signup/signup.php" method="POST">
+
+			<form action="../assets/backend/signup/signup.php" method="POST" id="coachform"
+				class="hidden relative flex-col gap-y-4 rounded-xl h-[85%]">
 				<!-- Coach Form -->
-				<div id="coachform" class="hidden flex-col gap-y-4 overflow-y-auto">
+				<div class="flex flex-col gap-y-4 overflow-y-auto">
 					<div class="flex flex-col gap-y-1">
 						<label class="text-yellow-700 font-semibold" for="">Given Name</label>
 						<input type="text" placeholder="Juan" name="givenname_coach" required
