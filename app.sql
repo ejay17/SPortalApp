@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2026 at 03:02 PM
+-- Generation Time: May 15, 2026 at 06:19 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.4.12
 
@@ -24,6 +24,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `player_activity`
+--
+
+CREATE TABLE `player_activity` (
+  `player_act_id` int(11) NOT NULL,
+  `tryout_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `roles`
 --
 
@@ -31,6 +43,14 @@ CREATE TABLE `roles` (
   `role_id` int(11) NOT NULL,
   `role` enum('Player','Coach') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`role_id`, `role`) VALUES
+(1, 'Player'),
+(2, 'Coach');
 
 -- --------------------------------------------------------
 
@@ -42,6 +62,23 @@ CREATE TABLE `sports` (
   `sport_id` int(11) NOT NULL,
   `sport_name` varchar(100) NOT NULL,
   `user_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tryouts`
+--
+
+CREATE TABLE `tryouts` (
+  `tryout_id` int(11) NOT NULL,
+  `sport_id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `notes` varchar(255) DEFAULT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `location` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -73,6 +110,14 @@ CREATE TABLE `users` (
 --
 
 --
+-- Indexes for table `player_activity`
+--
+ALTER TABLE `player_activity`
+  ADD PRIMARY KEY (`player_act_id`),
+  ADD KEY `tryout_id` (`tryout_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Indexes for table `roles`
 --
 ALTER TABLE `roles`
@@ -86,6 +131,13 @@ ALTER TABLE `sports`
   ADD KEY `fk_player_sport` (`user_id`);
 
 --
+-- Indexes for table `tryouts`
+--
+ALTER TABLE `tryouts`
+  ADD PRIMARY KEY (`tryout_id`),
+  ADD KEY `sport_id` (`sport_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -97,16 +149,28 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `player_activity`
+--
+ALTER TABLE `player_activity`
+  MODIFY `player_act_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `sports`
 --
 ALTER TABLE `sports`
   MODIFY `sport_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tryouts`
+--
+ALTER TABLE `tryouts`
+  MODIFY `tryout_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -119,10 +183,23 @@ ALTER TABLE `users`
 --
 
 --
+-- Constraints for table `player_activity`
+--
+ALTER TABLE `player_activity`
+  ADD CONSTRAINT `player_activity_ibfk_1` FOREIGN KEY (`tryout_id`) REFERENCES `tryouts` (`tryout_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `player_activity_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE;
+
+--
 -- Constraints for table `sports`
 --
 ALTER TABLE `sports`
   ADD CONSTRAINT `fk_player_sport` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `tryouts`
+--
+ALTER TABLE `tryouts`
+  ADD CONSTRAINT `tryouts_ibfk_1` FOREIGN KEY (`sport_id`) REFERENCES `sports` (`sport_id`);
 
 --
 -- Constraints for table `users`

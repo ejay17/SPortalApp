@@ -29,6 +29,10 @@
     <?php
     }
     ?>
+
+    <form action="">
+        <input type="text">
+    </form>
 </body>
 
 </html>
