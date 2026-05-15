@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,11 +24,23 @@
 
 <body>
         <div class="h-screen w-screen flex flex-col items-center justify-center bg-orange-50/30">
-                <div class="w-[90%] flex flex-col items-center gap-20">
+                <div class="w-[90%] max-w-md flex flex-col items-center gap-20">
                         <div class="flex flex-col items-center justify-center">
                                 <p class="text-6xl flex items-center font-nunito font-extrabold text-yellow-500"><img src="assets/images/S lang - SPortal Logo.svg" alt="" width="56">Portal</p>
                                 <p class="text-sm text-yellow-700">Way to your Sports.</p>
                         </div>
+
+                        <?php
+                        if (isset($_SESSION['error'])) {
+                                echo '<div class="w-full p-4 bg-red-100 border border-red-300 text-red-700 rounded-lg text-sm">' . htmlspecialchars($_SESSION['error']) . '</div>';
+                                unset($_SESSION['error']);
+                        }
+                        if (isset($_SESSION['success'])) {
+                                echo '<div class="w-full p-4 bg-green-100 border border-green-300 text-green-700 rounded-lg text-sm">' . htmlspecialchars($_SESSION['success']) . '</div>';
+                                unset($_SESSION['success']);
+                        }
+                        ?>
+
                         <form action="assets/backend/functions/login.php" method="POST"
                                 class="w-full p-9 flex flex-col gap-y-4 rounded-xl ">
 
@@ -48,7 +63,7 @@
                                         <a class="text-sm text-yellow-700" href="pages/signup.php">Don't have an account? <span class="text-yellow-600 underline">Sign up Here.</span></a>
                                 </div>
                                 <div class="">
-                                        <button type="submit" name="login" class="w-full flex items-center justify-center gap-x-2 py-4 bg-yellow-600 rounded-full text-lg text-white font-bold">Log In <img src="assets/icons/login.svg" alt="" width="20"></button>
+                                        <button type="submit" name="login" class="w-full flex items-center justify-center gap-x-2 py-4 bg-yellow-600 rounded-full text-lg text-white font-bold hover:bg-yellow-700 transition">Log In <img src="assets/icons/login.svg" alt="" width="20"></button>
                                 </div>
                         </form>
                 </div>

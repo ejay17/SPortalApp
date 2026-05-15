@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +26,16 @@
 	<div class="h-screen w-screen flex flex-col items-center bg-orange-50/30">
 		<div class="flex flex-col h-full w-full p-6 gap-y-4">
 			<p class="text-2xl text-center font-bold text-yellow-700">Create an Account</p>
+			<?php
+			if (isset($_SESSION["error"])) {
+				echo '<div class="w-full p-3 bg-red-100 border border-red-300 text-red-700 rounded-lg text-sm">' . htmlspecialchars($_SESSION["error"]) . '</div>';
+				unset($_SESSION["error"]);
+			}
+			if (isset($_SESSION["success"])) {
+				echo '<div class="w-full p-3 bg-green-100 border border-green-300 text-green-700 rounded-lg text-sm">' . htmlspecialchars($_SESSION["success"]) . '</div>';
+				unset($_SESSION["success"]);
+			}
+			?>
 
 			<div class="sticky top-0 flex w-full border border-yellow-200 rounded-xl bg-yellow-50 p-1">
 				<button id="playerformbtn" type="button" class="flex gap-2 items-center justify-center w-[50%] py-3 bg-yellow-600 rounded-lg text-yellow-50 font-bold"><img src="../assets/icons/player.svg" alt="" width="24"> Player</button>
@@ -188,7 +201,7 @@
 				</div>
 			</form>
 
-			<form action="../assets/backend/signup/signup.php" method="POST" id="coachform"
+			<form action="../assets/backend/functions/signup.php" method="POST" id="coachform"
 				class="hidden relative flex-col gap-y-4 rounded-xl h-[85%]">
 				<!-- Coach Form -->
 				<div class="flex flex-col gap-y-4 overflow-y-auto">

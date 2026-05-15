@@ -21,33 +21,32 @@ if (isset($_POST['login'])) {
 
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['role_id'] = $role;
+            $_SESSION['username'] = $row['username'];
 
             if ($role == '1') {
-
                 header("Location: ../../../pages/player_dashboard.php");
                 exit();
 
             } elseif ($role == '2') {
-
                 header("Location: ../../../pages/coach_dashboard.php");
                 exit();
 
             } else {
-
-                echo "Invalid role";
-
+                $_SESSION['error'] = "Invalid role.";
+                header("Location: ../../../index.php");
+                exit();
             }
 
         } else {
-
-            echo "Incorrect password.";
-
+            $_SESSION['error'] = "Incorrect password.";
+            header("Location: ../../../index.php");
+            exit();
         }
 
     } else {
-
-        echo "No user found.";
-
+        $_SESSION['error'] = "No user found with that username.";
+        header("Location: ../../../index.php");
+        exit();
     }
 
 }

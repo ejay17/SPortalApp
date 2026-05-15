@@ -18,6 +18,28 @@ if (isset($_POST['signup_player'])) {
     $institute_campus = trim($_POST['inscam_player']);
     $sports = $_POST['sports'] ?? [];
 
+    // Check if username already exists
+    $check = "SELECT username FROM users WHERE username = '$username'";
+    $check_result = mysqli_query($conn, $check);
+
+    if (mysqli_num_rows($check_result) > 0) {
+        session_start();
+        $_SESSION['error'] = "Username already exists. Please choose a different one.";
+        header('Location: ../../../pages/signup.php');
+        exit();
+    }
+
+    // Check if student ID already exists
+    $check_sid = "SELECT student_id FROM users WHERE student_id = '$student_id'";
+    $check_sid_result = mysqli_query($conn, $check_sid);
+
+    if (mysqli_num_rows($check_sid_result) > 0) {
+        session_start();
+        $_SESSION['error'] = "Student ID already registered.";
+        header('Location: ../../../pages/signup.php');
+        exit();
+    }
+
     $password_hashed = password_hash($password, PASSWORD_DEFAULT);
 
     $data = "INSERT INTO users (role_id, student_id, username, password, given_name, middle_name, last_name, suffix, sex, contact_number, social_media, dob, year_level, institute_campus)
@@ -28,17 +50,22 @@ if (isset($_POST['signup_player'])) {
         $user_id = mysqli_insert_id($conn);
 
         foreach ($sports as $sport_name) {
-
+            $sport_name = trim($sport_name);
             $sport_query = "INSERT INTO sports (user_id, sport_name)
             VALUES ('$user_id', '$sport_name')";
-
             mysqli_query($conn, $sport_query);
         }
+
+        session_start();
+        $_SESSION['success'] = "Account created successfully! Please log in.";
         header('Location: ../../../index.php');
     } else {
-        echo "Error: " . mysqli_error($conn);
+        session_start();
+        $_SESSION['error'] = "Error: " . mysqli_error($conn);
+        header('Location: ../../../pages/signup.php');
     }
 }
+
 ?>
 
 <?php
@@ -53,7 +80,18 @@ if (isset($_POST['signup_coach'])) {
     $sex = trim($_POST['sex_coach']);
     $dob = trim($_POST['dob_coach']);
     $institute_campus = trim($_POST['inscam_coach']);
-    $sport_name = $_POST['sport'];
+    $sport_name = trim($_POST['sport']);
+
+    // Check if username already exists
+    $check = "SELECT username FROM users WHERE username = '$username'";
+    $check_result = mysqli_query($conn, $check);
+
+    if (mysqli_num_rows($check_result) > 0) {
+        session_start();
+        $_SESSION['error'] = "Username already exists. Please choose a different one.";
+        header('Location: ../../../pages/signup.php');
+        exit();
+    }
 
     $password_hashed = password_hash($password, PASSWORD_DEFAULT);
 
@@ -66,14 +104,16 @@ if (isset($_POST['signup_coach'])) {
 
         $sport_query = "INSERT INTO sports (user_id, sport_name)
             VALUES ('$user_id', '$sport_name')";
-
         mysqli_query($conn, $sport_query);
 
+        session_start();
+        $_SESSION['success'] = "Account created successfully! Please log in.";
         header('Location: ../../../index.php');
     } else {
-        echo "Error: " . mysqli_error($conn);
+        session_start();
+        $_SESSION['error'] = "Error: " . mysqli_error($conn);
+        header('Location: ../../../pages/signup.php');
     }
 }
-
 
 ?>
